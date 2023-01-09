@@ -11,14 +11,14 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
         DataBase.create(readForbes());
 //      Таблица
-//        var graph = DataBase.executeQuery("SELECT country, SUM(netWorth) as sumNetWorth FROM Forbes GROUP BY country;");
-//        while(graph.next()){
-//            System.out.println(graph.getString("country")+" "+graph.getString("sumNetWorth"));
-//        }
+        var graph = DataBase.executeQuery("SELECT country, SUM(netWorth) as sumNetWorth FROM Forbes GROUP BY country;");
+        while(graph.next()){
+            System.out.println(graph.getString("country")+" "+graph.getString("sumNetWorth"));
+        }
         System.out.println("Самый молодой миллиардер из Франции, капитал которого превышает 10 млрд:");
         System.out.println(DataBase.executeQuery("SELECT * FROM Forbes WHERE country = 'France' AND netWorth > 10 ORDER BY age;").getString("name"));
         System.out.println("Имя и компания бизнесмена, имеющего самый большой капитал в сфере Energy:");
-        var graph = DataBase.executeQuery("SELECT * FROM Forbes WHERE country = 'United States' AND industry = 'Energy ' ORDER BY netWorth DESC;");
+        graph = DataBase.executeQuery("SELECT * FROM Forbes WHERE country = 'United States' AND industry = 'Energy ' ORDER BY netWorth DESC;");
         System.out.println(graph.getString("name") + " " + graph.getString("source"));
     }
 
