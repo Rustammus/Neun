@@ -1,7 +1,7 @@
 # Neun
 
-Итоговый проект по Java
-Вариант 9
+# Итоговый проект по Java 
+# Вариант 9
 Была создана база данных (database.db) с использованием библиотеки java.sql. В базе данных одна таблица "Forbes". Данные брались из файла resources/Forbes.csv и были пронумерованны строки.
 ![image](https://user-images.githubusercontent.com/122292195/211365213-ca70fa92-fbb9-4f5e-8756-ecf9fa1be537.png)
 
